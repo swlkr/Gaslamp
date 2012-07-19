@@ -48,7 +48,7 @@ class GaslampViewController < UIViewController
     
     #play the sound
     Dispatch::Queue.concurrent.async do
-      fart_sound = ["grim_fart", "little_parp"].sample
+      fart_sound = ["grim_fart", "little_parp", "fart_montage"].sample
       mainBundle = NSBundle.mainBundle
       filePath = mainBundle.pathForResource(fart_sound, ofType:"mp3")
       fileData = NSData.dataWithContentsOfFile(filePath)
