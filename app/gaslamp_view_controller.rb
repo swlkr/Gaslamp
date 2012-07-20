@@ -25,8 +25,6 @@ class GaslampViewController < UIViewController
     button.frame = [[75, 210],  [170, 170]]
     button.addTarget(self, action: :buttonIsTapped, forControlEvents:UIControlEventTouchUpInside)
     view.addSubview(button)
-    
-
   end
 
   def buttonIsTapped
