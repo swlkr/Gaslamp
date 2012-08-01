@@ -14,17 +14,30 @@ class GaslampViewController < UIViewController
     session.startRunning
 
     # set background image
-    bg_image = UIImage.imageNamed "background.png"
+    bg_image = UIImage.imageNamed "bkrnd.png"
     bg_image_view = UIImageView.alloc.initWithFrame(self.view.bounds)
     bg_image_view.image = bg_image
     view.addSubview(bg_image_view)
 
-    # set us up the button
+    # set the logo
+    logo_image = UIImage.imageNamed "logo.png"
+    @logo_view = UIImageView.alloc.initWithFrame [[32.5, 69], [253.5, 81.5]]
+    @logo_view.image = logo_image
+    view.addSubview(@logo_view)
+
+    #logo_active_image = UIImage.imageNamed "logo-active.png" 
+    #logo_active_view = UIImageView.alloc.initWithFrame [[0, 0], [320, 201]]
+    #logo_active_view.image = logo_active_image
+    #view.addSubview(logo_active_view)
+
+    # set us up the buttons
     button = UIButton.buttonWithType(UIButtonTypeCustom)
-    button.setImage(UIImage.imageNamed("button.png"), forState:UIControlStateHighlighted)
-    button.frame = [[75, 210],  [170, 170]]
+    button.setImage(UIImage.imageNamed("bttn-reg.png"), forState:UIControlStateNormal)
+    button.setImage(UIImage.imageNamed("bttn-active.png"), forState:UIControlStateHighlighted)
+    button.frame = [[74, 212],  [170, 169]]
     button.addTarget(self, action: :buttonIsTapped, forControlEvents:UIControlEventTouchUpInside)
     view.addSubview(button)
+
   end
 
   def buttonIsTapped
@@ -36,11 +49,15 @@ class GaslampViewController < UIViewController
         @device.setTorchMode(AVCaptureTorchModeOn)
         @device.setFlashMode(AVCaptureFlashModeOn)
         @device.unlockForConfiguration
+        @logo_view.image = UIImage.imageNamed "logo-active.png"
+        @logo_view.frame = [[0, 0], [320, 201]]
       else
         @device.lockForConfiguration(nil)
         @device.setTorchMode(AVCaptureTorchModeOff)
         @device.setFlashMode(AVCaptureFlashModeOn)
         @device.unlockForConfiguration
+        @logo_view.image = UIImage.imageNamed "logo.png"
+        @logo_view.frame = [[32.5, 69], [253.5, 81.5]]
        end 
     end
     
