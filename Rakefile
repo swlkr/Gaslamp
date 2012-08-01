@@ -12,6 +12,7 @@ Motion::Project::App.setup do |app|
   end
   
   app.version = '2.0'
+  app.short_version = '2'
   app.name = 'Gaslamp'
   app.identifier = 'com.swlkr.gaslamp'
   app.release do
