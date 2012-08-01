@@ -11,6 +11,7 @@ Motion::Project::App.setup do |app|
     app.testflight.team_token = '53064711be18b705102907eb06705516_MTExOTM5MjAxMi0wNy0xOSAwMTo1OTo0MC45Mzg0Njg'
   end
   
+  app.version = '2.0'
   app.name = 'Gaslamp'
   app.identifier = 'com.swlkr.gaslamp'
   app.release do
