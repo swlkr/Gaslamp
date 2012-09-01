@@ -16,7 +16,7 @@ Motion::Project::App.setup do |app|
   app.name = 'Gaslamp'
   app.identifier = 'com.swlkr.gaslamp'
   app.release do
-    app.provisioning_profile = "/Users/seanwalker/Library/MobileDevice/Provisioning Profiles/1CF7ECBD-1CC5-43EC-BCF2-99B4AC65760D.mobileprovision"
+    app.provisioning_profile = "/Users/seanwalker/Library/MobileDevice/Provisioning Profiles/Gaslamp.mobileprovision"
   end
   app.interface_orientations = [:portrait]
   app.device_family = :iphone
